@@ -1,0 +1,96 @@
+---
+import ShareIcon from "./icons/ShareIcon.astro";
+import ReactIcon from './icons/ReactIcon.astro';
+import HtmlIcon from './icons/HtmlIcon.astro';
+import CssIcon from './icons/CssIcon.astro';
+import Illustrator from './icons/Illustrator.astro';
+import Photoshop from './icons/Photoshop.astro';
+import proyect1 from '../assets/UbicaTodo.webp';
+import proyect2 from '../assets/Logos.webp';
+import proyect3 from '../assets/notasapp.webp';
+
+
+const TAGS = {
+  REACT: {
+    name: 'ReactJS',
+    class: 'bg-blue-500',
+    icon: ReactIcon,
+  },
+  HTML: {
+    name: 'HTML5',
+    class: 'bg-red-500',
+    icon: HtmlIcon,
+  },
+  CSS: {
+    name: 'CSS3',
+    class: 'bg-green-500',
+    icon: CssIcon,
+  },
+  ILLU: {
+    name: 'Illustrator',
+    class: 'bg-green-500',
+    icon: Illustrator,
+  },
+  PhotoShop: {
+    name: 'Photoshop',
+    class: 'bg-green-500',
+    icon: Photoshop,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: 'UbicaTodo',
+    description: 'UbicaTodo es una aplicación web desarrollada en React que te ayuda a mantener tu hogar organizado. Con UbicaTodo, puedes registrar y ubicar fácilmente tus pertenencias, sabiendo siempre dónde se encuentran. Ideal para optimizar el espacio y ahorrar tiempo buscando objetos, esta app es tu aliada perfecta para el orden en casa. ¡Simplifica tu vida con UbicaTodo!',
+    image: proyect1,
+    url: 'rey93.github.io/ubicatodo/',
+    github: '#',
+    tags: [TAGS.REACT, TAGS.HTML, TAGS.CSS],
+  },
+  {
+    title: 'Logos',
+    description: 'Logos dedicados a la creación de identidades visuales únicas y memorables. A través de un proceso creativo, diseñe logotipos que capturan la esencia y los valores de cada cliente, asegurando que su marca se destaque en el mercado. Desde conceptos iniciales hasta el diseño final.',
+    image: proyect2,
+    url: 'https://www.domestika.org/es/reinaldorios93/portfolio',
+    github: '#',
+    tags: [TAGS.ILLU, TAGS.PhotoShop],
+  },
+  {
+    title: 'Aplicacion de Notas',
+    description: 'Aplicacion web de notas simple desarrollada con React que te posibilita guardar cualquier texto de manera rápida y tenerlo a mano.',
+    image: proyect3,
+    url: 'https://rey93.github.io/Simple-Note-Web-App/',
+    github: '#',
+    tags: [TAGS.REACT, TAGS.HTML, TAGS.CSS],
+  },
+];
+---
+
+{
+  PROJECTS.map(({ title, description, tags, image, url }, index) => (
+    <article class={`w-full mx-auto py-10 pb-16 flex flex-col lg:flex-row gap-10 lg:gap-10 ${index === 1 ? 'lg:flex-row-reverse' : ''}`}>
+      <div class="w-full lg:w-1/2 flex-shrink-0">
+        <img src={image.src} alt={title} class="w-full h-auto max-w-x1 rounded-lg" />
+      </div>
+      <div class="flex flex-col gap-4 w-full lg:w-2/3">
+        <h2 class="text-xl lg:text-5xl font-semibold mb-4 text-pretty">{title}</h2>
+        <a href={url} class="text-sky-600 flex gap-2 items-center break-all">{url}
+          <ShareIcon />
+        </a>
+        <p class="mb-3 text-gray-500 dark:text-gray-400">{description}</p>
+        <ul class="flex flex-wrap gap-2">
+          {tags.map((tag) => (
+            <li class="relative group">
+              {<tag.icon />}
+              <div class="absolute hidden group-hover:block bg-gray-800 text-white text-xs py-1 px-2 rounded-md top-0 left-1/2 transform -translate-x-1/2 -translate-y-full mb-1 whitespace-nowrap">
+                {tag.name}
+              </div>
+            </li>
+          ))}
+        </ul>
+        <a href={url} class="inline-block bg-sky-600 text-white px-4 py-2 rounded-lg mt-4 w-[130px]">Ver Proyecto</a>
+      </div>
+      
+    </article>
+  ))
+}

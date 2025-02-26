@@ -1,0 +1,35 @@
+---
+import ExperienciaItems from "./ExperienciaItems.astro"
+
+ const EXPERIENCE = [
+    {
+        date: 'Actualmente...',
+        title: 'Freelance Developer',
+        description: 'Desarrollador web freelance, especializado en ReactJS y desarrollo web. Actualmente estoy realizando proyectos de desarrollo web personales y para clientes.',
+        link: 'https://github.com/rey93',
+    },
+    {
+        date: 'Actualmente...',
+        title: 'Creador de Contenido - X',
+        description: 'Divulgo sobre programación, sobre ReactJS y desarrollo web en mi cuenta de X donde enseño a otros desarrolladores a programar.',
+        link: 'https://x.com/codeandosinpara',
+    },
+    {
+        date: 'Febrero 2018 - Junio 2024',
+        title: 'Diseñador Gráfico - Cuba',
+        description: 'Diseñador gráfico en una empresa de diseño en Cuba, donde realicé trabajos de diseño gráfico y web. Trabajé en proyectos de diseño gráfico y web para clientes.',
+        link: '#',
+    },
+ ]
+---
+<ol class="relative border-s border-gray-200 ml-3">                  
+    
+{
+    EXPERIENCE.map(experience =>(
+        <li class="mb-10 ms-4">
+            <ExperienciaItems {...experience}/>
+        </li>
+    ))
+}
+</ol>
+
