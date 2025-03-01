@@ -1,12 +1,26 @@
-
 <header class="flex justify-center items-center py-5 w-full xl:w-[1120px] mx-auto">
-    
-
     <nav class="flex flex-row gap-x-10 opacity-80 text-white border-[#6a7282] border-2 rounded-2xl p-2 ">
-        <a href="#top"class="hover:text-red-300">Inicio</a>
+        <a href="#top" class="hover:text-red-300">Inicio</a>
         <a href="#experiencia" class="hover:text-amber-300">Experiencia</a>
         <a href="#proyectos" class="hover:text-amber-300">Proyectos</a>
-        <a href="#contacto"class="hover:text-amber-300" >Contacto</a>
+        <a href="#contacto" class="hover:text-amber-300">Contacto</a>
     </nav>
-    
 </header>
+
+<style is:local>
+    @media (max-width: 768px) {
+        header {
+            padding: 5px;
+        }
+        nav {
+            flex-direction: column;
+            gap: 5px;
+            width: 100%;
+            text-align: center;
+        }
+        nav a {
+            display: block;
+            padding: 10px 0;
+        }
+    }
+</style>
