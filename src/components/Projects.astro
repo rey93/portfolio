@@ -8,6 +8,7 @@ import Photoshop from './icons/Photoshop.astro';
 import proyect1 from '../assets/UbicaTodo.webp';
 import proyect2 from '../assets/Logos.webp';
 import proyect3 from '../assets/notasapp.webp';
+import { Image } from "astro:assets";
 
 
 const TAGS = {
@@ -46,6 +47,8 @@ const PROJECTS = [
     url: 'rey93.github.io/ubicatodo/',
     github: '#',
     tags: [TAGS.REACT, TAGS.HTML, TAGS.CSS],
+    width: 960,
+    height: 540,
   },
   {
     title: 'Logos',
@@ -54,6 +57,8 @@ const PROJECTS = [
     url: 'https://www.domestika.org/es/reinaldorios93/portfolio',
     github: '#',
     tags: [TAGS.ILLU, TAGS.PhotoShop],
+    width: 960,
+    height: 540,
   },
   {
     title: 'Aplicacion de Notas',
@@ -62,15 +67,19 @@ const PROJECTS = [
     url: 'https://rey93.github.io/Simple-Note-Web-App/',
     github: '#',
     tags: [TAGS.REACT, TAGS.HTML, TAGS.CSS],
+    width: 960,
+    height: 540,
   },
 ];
 ---
 
 {
-  PROJECTS.map(({ title, description, tags, image, url }, index) => (
+  PROJECTS.map(({ title, description, tags, image, url, width, height }, index) => (
     <article class={`w-full mx-auto py-10 pb-16 flex flex-col lg:flex-row gap-10 lg:gap-10 ${index === 1 ? 'lg:flex-row-reverse' : ''}`}>
       <div class="w-full lg:w-1/2 flex-shrink-0">
-        <img src={image.src} alt={title} class="w-full h-auto max-w-x1 rounded-lg" />
+        <Image src={image} alt={title} 
+        width={width} height={height}
+        class="w-full h-auto max-w-x1 rounded-lg" />
       </div>
       <div class="flex flex-col gap-4 w-full lg:w-2/3">
         <h2 class="text-xl lg:text-5xl font-semibold mb-4 text-pretty">{title}</h2>

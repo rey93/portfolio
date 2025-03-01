@@ -1,14 +1,14 @@
 {
-  "homepage": "https://rey93.github.io/portafolio/",
-  "name": "reinaldopr-portafolio",
+  "homepage": "https://rey93.github.io/portfolio/",
+  "name": "reinaldopr-portfolio",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "astro": "astro"
   },
   "dependencies": {
@@ -21,5 +21,3 @@
     "gh-pages": "^6.3.0"
   }
 }
-
-
