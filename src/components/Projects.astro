@@ -3,11 +3,14 @@ import ShareIcon from "./icons/ShareIcon.astro";
 import ReactIcon from './icons/ReactIcon.astro';
 import HtmlIcon from './icons/HtmlIcon.astro';
 import CssIcon from './icons/CssIcon.astro';
+import AstroIcon from './icons/AstroIcon.astro';
+import TailwindIcon from './icons/TailwindIcon.astro';
 import Illustrator from './icons/Illustrator.astro';
 import Photoshop from './icons/Photoshop.astro';
 import proyect1 from '../assets/UbicaTodo.webp';
 import proyect2 from '../assets/Logos.webp';
-import proyect3 from '../assets/notasapp.webp';
+import proyect3 from '../assets/webrestaurant.webp';
+import proyect4 from '../assets/notasapp.webp';
 import { Image } from "astro:assets";
 
 
@@ -37,6 +40,16 @@ const TAGS = {
     class: 'bg-green-500',
     icon: Photoshop,
   },
+  Astro: {
+    name: 'Astro',
+    class: 'bg-green-500',
+    icon: AstroIcon,
+  },
+  TailwindIcon: {
+    name: 'TailwindCSS',
+    class: 'bg-green-500',
+    icon: TailwindIcon,
+  },
 };
 
 const PROJECTS = [
@@ -61,9 +74,19 @@ const PROJECTS = [
     height: 540,
   },
   {
+    title: 'Cuban Restaurant Web',
+    description: 'Web de un restaurante cubano desarrollado con Astro y TailwindCSS. Este proyecto es una web de un restaurante cubano ficticio que muestra el menú y la información de contacto. La web es responsive y se adapta a todos los dispositivos.',
+    image: proyect3,
+    url: 'https://comeaquicuba.netlify.app/',
+    github: '#',
+    tags: [TAGS.Astro, TAGS.TailwindIcon, TAGS.HTML, TAGS.CSS],
+    width: 960,
+    height: 540,
+  },
+  {
     title: 'Aplicacion de Notas',
     description: 'Aplicacion web de notas simple desarrollada con React que te posibilita guardar cualquier texto de manera rápida y tenerlo a mano.',
-    image: proyect3,
+    image: proyect4,
     url: 'https://rey93.github.io/Simple-Note-Web-App/',
     github: '#',
     tags: [TAGS.REACT, TAGS.HTML, TAGS.CSS],
@@ -75,7 +98,7 @@ const PROJECTS = [
 
 {
   PROJECTS.map(({ title, description, tags, image, url, width, height }, index) => (
-    <article class={`w-full mx-auto py-10 pb-16 flex flex-col lg:flex-row gap-10 lg:gap-10 ${index === 1 ? 'lg:flex-row-reverse' : ''}`}>
+  <article class={`w-full mx-auto py-10 pb-16 flex flex-col lg:flex-row gap-10 lg:gap-10 ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
       <div class="w-full lg:w-1/2 flex justify-center items-center sm:w-2xl ">
         <Image src={image} alt={title} 
         width={width} height={height}
@@ -99,7 +122,6 @@ const PROJECTS = [
         </ul>
         <a href={url} class="bg-sky-600 text-white py-2 rounded-lg mt-4 p-5 justify-center items-center hover:text-black">Ver Proyecto</a>
       </div>
-      
     </article>
   ))
 }
