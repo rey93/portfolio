@@ -1,72 +1,82 @@
 ---
-import '../styles/global.css';
-import Layout from '../layouts/Layout.astro';
-import Badge from '../components/Badge.astro';
-import Experiencia from '../components/Experiencia.astro';
-import LinkedInIcon from '../components/icons/LinkedInIcon.astro';
-import GitHubIcon from '../components/icons/GitHubIcon.astro';
-import CodeIcon from '../components/icons/CodeIcon.astro';
-import SocialPill from '../components/SocialPill.astro';
-import MailIcon from '../components/icons/MailIcon.astro';
-import Briefcase from '../components/icons/Briefcase.astro';
-import Projects from '../components/Projects.astro';
-import { Image } from 'astro:assets';
-
+import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import Experiencia from "../components/Experiencia.astro";
+import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
+import GitHubIcon from "../components/icons/GitHubIcon.astro";
+import CodeIcon from "../components/icons/CodeIcon.astro";
+import SocialPill from "../components/SocialPill.astro";
+import MailIcon from "../components/icons/MailIcon.astro";
+import Briefcase from "../components/icons/Briefcase.astro";
+import Projects from "../components/Projects.astro";
+import { Image } from "astro:assets";
 ---
 
-<Layout title='Portfolio de ReinaldoPR - Desarrollador y Programador web'
-        description='Contrata a ReinaldoPR para crear tu aplicación web.'>
-    
-    <main class="p-5 flex flex-col">
-      <section class="w-full mx-auto lg:w-[740px] py-10 pb-6 lg:pb-16">
-        <Image src="https://media.licdn.com/dms/image/v2/D4E03AQFBJTeFHIufEw/profile-displayphoto-shrink_200_200/B4EZa_LDa2HwAY-/0/1746964079936?e=1760572800&v=beta&t=zaH_rHYX77G-vAhkUC545uqHkUwIiQzwjsQ_73yVVII" 
-        width="200" height="200"
-        class="w-13 h-13 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" 
-        alt="ReinaldoPR" 
-        loading="eager" 
-        />
+<Layout
+  title="Portfolio de ReinaldoPR - Desarrollador y Programador web"
+  description="Contrata a ReinaldoPR para crear tu aplicación web."
+>
+  <main class="p-5 flex flex-col">
+    <section class="w-full mx-auto lg:w-[740px] py-10 pb-6 lg:pb-16">
+      <Image
+        src="https://media.licdn.com/dms/image/v2/D4E03AQFBJTeFHIufEw/profile-displayphoto-shrink_200_200/B4EZa_LDa2HwAY-/0/1746964079936?e=1766016000&v=beta&t=DTOMWYLggsGuV26jDH0q11PErBb4nyfSXdqH5zqT0J0"
+        width="200"
+        height="200"
+        class="w-13 h-13 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500"
+        alt="ReinaldoPR"
+        loading="eager"
+      />
 
-        <h1 class="text-white text-2xl md:text-5xl lg:text-4xl font-bold flex 
-                    flex-row gap-x-4 mb-3">
-        Hola, soy Reinaldo Peña Rios 
-            <a href="https://www.linkedin.com/in/reinaldopr/" 
-            class="flex justify-center items-center cursor-pointer"
-            target="_blank"
-            rel="noopener">
-            <Badge>Disponible para trabajar</Badge>
+      <h1
+        class="text-white text-2xl md:text-5xl lg:text-4xl font-bold flex
+                    flex-row gap-x-4 mb-3"
+      >
+        Hola, soy Reinaldo Peña Rios
+        <a
+          href="https://www.linkedin.com/in/reinaldopr/"
+          class="flex justify-center items-center cursor-pointer"
+          target="_blank"
+          rel="noopener"
+        >
+          <Badge>Disponible para trabajar</Badge>
         </a>
-        </h1>
-        <h2 class="text-xl lg:text-2xl text-wrap max-w-[1120px]">+3 años de experiencia. <span class="text-amber-300">Desarrolador Web en React</span>. De Malaga, España.
-                Especializado en crear  <span class="text-amber-300">aplicaciones</span> únicas y adaptables a todos los dispositivos.
-        </h2>
-        <nav class="flex gap-4 pt-4 flex-wrap">
-            <SocialPill href="https://www.linkedin.com/in/reinaldopr/">
-                <LinkedInIcon class="w-5 md:h-6"/>
-                LinkedIn
-            </SocialPill>
-            <SocialPill href="https://github.com/rey93">
-                <GitHubIcon class="w-5 lg:h-6"/>
-                GitHub
-            </SocialPill>
-            <SocialPill href="mailto:reinaldop.rios93@gmail.com">
-                <MailIcon class="w-5 lg:h-6"/>
-                reinaldop.rios93@gmail.com
-            </SocialPill>
-        </nav>
-      </section>
+      </h1>
+      <h2 class="text-xl lg:text-2xl text-wrap max-w-[1120px]">
+        +3 años de experiencia. <span class="text-amber-300"
+          >Desarrolador Web en React</span
+        >. De Malaga, España. Especializado en crear <span
+          class="text-amber-300">aplicaciones</span
+        > únicas y adaptables a todos los dispositivos.
+      </h2>
+      <nav class="flex gap-4 pt-4 flex-wrap">
+        <SocialPill href="https://www.linkedin.com/in/reinaldopr/">
+          <LinkedInIcon class="w-5 md:h-6" />
+          LinkedIn
+        </SocialPill>
+        <SocialPill href="https://github.com/rey93">
+          <GitHubIcon class="w-5 lg:h-6" />
+          GitHub
+        </SocialPill>
+        <SocialPill href="mailto:reinaldop.rios93@gmail.com">
+          <MailIcon class="w-5 lg:h-6" />
+          reinaldop.rios93@gmail.com
+        </SocialPill>
+      </nav>
+    </section>
     <section id="experiencia" class="w-full lg:w-[740px] mx-auto py-10 pb-16">
-        <h2 class="text-2xl font-semibold mb-4 flex gap-x-2 items-center">
-            <Briefcase  class="w-7 h-6"/>
-            Experiencia Laboral</h2>
-        <Experiencia />
+      <h2 class="text-2xl font-semibold mb-4 flex gap-x-2 items-center">
+        <Briefcase class="w-7 h-6" />
+        Experiencia Laboral
+      </h2>
+      <Experiencia />
     </section>
     <section id="proyectos" class="w-full lg:w-full mx-auto py-10 pb-16 px-10">
-        <h2 class="text-2xl font-semibold mb-4 flex gap-x-2 items-center">
-            <CodeIcon  class="w-7 h-6"/>
-            Proyectos</h2>
-            <Projects />
+      <h2 class="text-2xl font-semibold mb-4 flex gap-x-2 items-center">
+        <CodeIcon class="w-7 h-6" />
+        Proyectos
+      </h2>
+      <Projects />
     </section>
-
-    
-    </main>
+  </main>
 </Layout>
